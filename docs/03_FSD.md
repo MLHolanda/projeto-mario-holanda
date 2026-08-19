@@ -226,7 +226,7 @@ A IA codadora deverá trabalhar a partir de:
 1. `PRD.md`;
 2. `DESIGN.md`;
 3. `DECISOES_TECNICAS.md`;
-4. `FSD.md`;
+4. `03_FSD.md`;
 5. demais arquivos oficiais quando necessários.
 
 A IA não deverá inventar requisitos, arquitetura, regras de negócio, bibliotecas ou serviços fora do definido.

@@ -145,7 +145,7 @@ Suas referências principais serão:
 1. PRD.md;
 2. DESIGN.md;
 3. DECISOES_TECNICAS.md;
-4. FSD.md;
+4. 03_FSD.md;
 5. demais arquivos oficiais quando necessários.
 
 A IA não deverá inventar requisitos, arquitetura, regras de negócio, bibliotecas ou serviços fora do definido.
@@ -200,4 +200,4 @@ O FSD deverá refletir estas decisões. Alterações deverão ser analisadas e r
 
 ## 23. Evolução do documento
 
-Este documento poderá evoluir quando novas necessidades forem identificadas, preservando a coerência entre PRD, DESIGN.md, DECISOES_TECNICAS.md e FSD.md.
+Este documento poderá evoluir quando novas necessidades forem identificadas, preservando a coerência entre PRD, DESIGN.md, DECISOES_TECNICAS.md e 03_FSD.md.

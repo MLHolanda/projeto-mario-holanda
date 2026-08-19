@@ -1,12 +1,14 @@
 {
   "name": "projeto-mario-holanda",
   "version": "1.0.0",
-  "main": "index.js",
   "directories": {
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "keywords": [],
   "author": "",
