@@ -1,15 +1,90 @@
 ---
+// src/pages/index.astro
+// Página Inicial — Entrada da Experiência do Projeto Mário Holanda
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Projeto Mário Holanda</title>
-  </head>
+<BaseLayout
+  title="Mário Holanda — Um Capítulo de Cada Vez"
+  description="Uma experiência digital viva e narrativa sobre trajetória, aprendizados, projetos e ideias."
+>
+  <section class="hero-entry" aria-labelledby="hero-title">
+    <div class="container-reading hero-container">
+      <p class="hero-eyebrow">Trajetória em construção</p>
+      <h1 id="hero-title" class="hero-title">Mário Holanda</h1>
+      <p class="hero-concept">Um Capítulo de Cada Vez</p>
+      <p class="hero-text">
+        Bem-vindo. Este espaço é uma narrativa contínua sobre histórias, aprendizados,
+        projetos e reflexões. Um registro autêntico de uma jornada que evolui a cada passo.
+      </p>
+      <p class="hero-motto">
+        <em>"O livro não precisa estar terminado para começar a ser lido."</em>
+      </p>
+    </div>
+  </section>
+</BaseLayout>
 
-  <body>
-    <h1>Projeto Mário Holanda</h1>
-    <p>A história continua.</p>
-  </body>
-</html>
+<style>
+  .hero-entry {
+    padding-top: var(--space-9);
+    padding-bottom: var(--space-9);
+    display: flex;
+    align-items: center;
+    min-height: 50vh;
+  }
+
+  .hero-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .hero-eyebrow {
+    font-family: var(--font-body);
+    font-size: var(--font-size-small);
+    font-weight: 600;
+    color: var(--color-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .hero-title {
+    font-family: var(--font-headings);
+    font-size: var(--font-size-h1);
+    line-height: var(--line-height-h1);
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+
+  .hero-concept {
+    font-family: var(--font-headings);
+    font-size: var(--font-size-h3);
+    line-height: var(--line-height-h3);
+    color: var(--color-secondary);
+    font-weight: 700;
+  }
+
+  .hero-text {
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
+    color: var(--color-text);
+    max-width: 60ch;
+  }
+
+  .hero-motto {
+    margin-top: var(--space-2);
+    font-family: var(--font-headings);
+    font-size: var(--font-size-small);
+    color: var(--color-text);
+    opacity: 0.85;
+  }
+
+  @media (max-width: 767px) {
+    .hero-entry {
+      padding-top: var(--space-6);
+      padding-bottom: var(--space-6);
+      min-height: auto;
+    }
+  }
+</style>

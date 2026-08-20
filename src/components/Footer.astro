@@ -1,0 +1,54 @@
+---
+// src/components/Footer.astro
+// Componente de Rodapé do Projeto Mário Holanda
+// Responsabilidade exclusiva: Landmark semântico <footer>
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container-wide footer-container">
+    <p class="footer-narrative">A história continua.</p>
+    <p class="footer-concept">Um Capítulo de Cada Vez</p>
+    <p class="footer-copyright">&copy; {currentYear} Mário Holanda.</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    width: 100%;
+    margin-top: auto;
+    background-color: var(--color-background);
+    border-top: 1px solid rgba(11, 31, 58, 0.08); /* Delimitação sutil */
+    padding-top: var(--space-7);
+    padding-bottom: var(--space-7);
+    text-align: center;
+  }
+
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .footer-narrative {
+    font-family: var(--font-headings);
+    font-size: var(--font-size-body);
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+
+  .footer-concept {
+    font-family: var(--font-body);
+    font-size: var(--font-size-small);
+    color: var(--color-secondary);
+  }
+
+  .footer-copyright {
+    font-family: var(--font-body);
+    font-size: var(--font-size-caption);
+    color: var(--color-text);
+    opacity: 0.8;
+    margin-top: var(--space-2);
+  }
+</style>

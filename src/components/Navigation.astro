@@ -1,0 +1,90 @@
+---
+// src/components/Navigation.astro
+// Componente de Navegação Principal do Projeto Mário Holanda
+// Responsabilidade exclusiva: Landmark semântico <nav>
+---
+
+<nav class="main-nav" aria-label="Navegação principal">
+  <ul class="nav-list">
+    <li class="nav-item">
+      <a href="/" class="nav-link">Início</a>
+    </li>
+    <li class="nav-item">
+      <a href="#capitulos" class="nav-link">Capítulos</a>
+    </li>
+    <li class="nav-item">
+      <a href="#projetos" class="nav-link">Projetos</a>
+    </li>
+    <li class="nav-item">
+      <a href="#aprendizados" class="nav-link">Aprendizados</a>
+    </li>
+    <li class="nav-item">
+      <a href="#pensamentos" class="nav-link">Pensamentos</a>
+    </li>
+    <li class="nav-item">
+      <a href="#contato" class="nav-link">Contato</a>
+    </li>
+  </ul>
+</nav>
+
+<style>
+  .main-nav {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-2) var(--space-4);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-link {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--space-2) var(--space-3);
+    font-family: var(--font-body);
+    font-size: var(--font-size-small);
+    font-weight: 500;
+    color: var(--color-primary);
+    text-decoration: none;
+    border-radius: var(--space-1);
+    transition: color 0.2s ease, background-color 0.2s ease;
+    min-height: 44px; /* Área de toque confortável recomendada para acessibilidade e mobile */
+  }
+
+  .nav-link:hover {
+    color: var(--color-secondary);
+    background-color: rgba(15, 118, 110, 0.08); /* Realce sutil em teal */
+  }
+
+  .nav-link:focus-visible {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 2px;
+  }
+
+  @media (max-width: 767px) {
+    .main-nav {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .nav-list {
+      justify-content: center;
+      gap: var(--space-1) var(--space-2);
+    }
+
+    .nav-link {
+      padding: var(--space-2);
+    }
+  }
+</style>
