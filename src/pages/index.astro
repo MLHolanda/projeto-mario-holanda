@@ -2,6 +2,44 @@
 // src/pages/index.astro
 // Página Inicial — Entrada da Experiência do Projeto Mário Holanda
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const journeyPaths = [
+  {
+    href: '/capitulos',
+    eyebrow: 'História e Trajetória',
+    title: 'Capítulos',
+    description:
+      'Histórias, momentos e experiências que ajudam a contar uma trajetória em constante construção.',
+  },
+  {
+    href: '/projetos',
+    eyebrow: 'Criação e Prática',
+    title: 'Projetos',
+    description:
+      'Construções que refletem aprendizados, experiências e diferentes momentos da jornada.',
+  },
+  {
+    href: '/aprendizados',
+    eyebrow: 'Conhecimento em Construção',
+    title: 'Aprendizados',
+    description:
+      'Estudos, descobertas, ferramentas e conhecimentos que continuam evoluindo a cada passo.',
+  },
+  {
+    href: '/pensamentos',
+    eyebrow: 'Reflexões e Ideias',
+    title: 'Pensamentos',
+    description:
+      'Percepções, perguntas e ideias que ainda estão encontrando seu próprio caminho.',
+  },
+  {
+    href: '/contato',
+    eyebrow: 'Conexão e Diálogo',
+    title: 'Contato',
+    description:
+      'Um espaço aberto para conversas, trocas de experiências e novas possibilidades.',
+  },
+];
 ---
 
 <BaseLayout
@@ -22,15 +60,45 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </p>
     </div>
   </section>
+
+  <section class="journey-paths" aria-labelledby="journey-title">
+    <div class="container-wide journey-container">
+      <div class="journey-introduction">
+        <p class="section-eyebrow">Caminhos da jornada</p>
+        <h2 id="journey-title" class="journey-title">
+          Escolha por onde continuar.
+        </h2>
+        <p class="journey-text">
+          Cada caminho revela uma parte diferente desta história. Não existe uma ordem
+          obrigatória. Você pode começar por onde fizer mais sentido para você.
+        </p>
+      </div>
+
+      <nav class="journey-navigation" aria-label="Caminhos da jornada">
+        <ul class="journey-list">
+          {journeyPaths.map((path) => (
+            <li class="journey-item">
+              <a href={path.href} class="journey-link">
+                <p class="journey-eyebrow">{path.eyebrow}</p>
+                <h3 class="journey-item-title">{path.title}</h3>
+                <p class="journey-description">{path.description}</p>
+                <span class="journey-action">Continuar →</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </div>
+  </section>
 </BaseLayout>
 
 <style>
   .hero-entry {
-    padding-top: var(--space-9);
-    padding-bottom: var(--space-9);
     display: flex;
     align-items: center;
     min-height: 50vh;
+    padding-top: var(--space-9);
+    padding-bottom: var(--space-9);
   }
 
   .hero-container {
@@ -39,7 +107,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     gap: var(--space-4);
   }
 
-  .hero-eyebrow {
+  .hero-eyebrow,
+  .section-eyebrow,
+  .journey-eyebrow {
     font-family: var(--font-body);
     font-size: var(--font-size-small);
     font-weight: 600;
@@ -64,11 +134,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     font-weight: 700;
   }
 
-  .hero-text {
+  .hero-text,
+  .journey-text,
+  .journey-description {
     font-family: var(--font-body);
     font-size: var(--font-size-body);
     line-height: var(--line-height-body);
     color: var(--color-text);
+  }
+
+  .hero-text {
     max-width: 60ch;
   }
 
@@ -80,11 +155,110 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     opacity: 0.85;
   }
 
+  .journey-paths {
+    padding-top: var(--space-9);
+    padding-bottom: var(--space-9);
+    border-top: 1px solid rgba(11, 31, 58, 0.08);
+  }
+
+  .journey-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-7);
+  }
+
+  .journey-introduction {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    max-width: 60ch;
+  }
+
+  .journey-title {
+    font-family: var(--font-headings);
+    font-size: var(--font-size-h2);
+    line-height: var(--line-height-h2);
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+
+  .journey-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-4);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .journey-item:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .journey-link {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    min-height: 100%;
+    padding: var(--space-6);
+    color: inherit;
+    text-decoration: none;
+    border: 1px solid rgba(11, 31, 58, 0.1);
+    border-radius: var(--space-1);
+    transition:
+      border-color 0.2s ease,
+      background-color 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .journey-link:hover {
+    background-color: rgba(15, 118, 110, 0.04);
+    border-color: var(--color-secondary);
+    transform: translateY(-2px);
+  }
+
+  .journey-link:focus-visible {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 3px;
+  }
+
+  .journey-item-title {
+    font-family: var(--font-headings);
+    font-size: var(--font-size-h3);
+    line-height: var(--line-height-h3);
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+
+  .journey-action {
+    margin-top: auto;
+    font-family: var(--font-body);
+    font-size: var(--font-size-small);
+    font-weight: 600;
+    color: var(--color-secondary);
+  }
+
   @media (max-width: 767px) {
-    .hero-entry {
+    .hero-entry,
+    .journey-paths {
       padding-top: var(--space-6);
       padding-bottom: var(--space-6);
+    }
+
+    .hero-entry {
       min-height: auto;
+    }
+
+    .journey-list {
+      grid-template-columns: 1fr;
+    }
+
+    .journey-item:last-child {
+      grid-column: auto;
+    }
+
+    .journey-link {
+      padding: var(--space-5);
     }
   }
 </style>

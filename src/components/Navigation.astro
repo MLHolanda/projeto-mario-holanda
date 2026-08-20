@@ -2,28 +2,40 @@
 // src/components/Navigation.astro
 // Componente de Navegação Principal do Projeto Mário Holanda
 // Responsabilidade exclusiva: Landmark semântico <nav>
+
+const pathname = Astro.url.pathname;
+const currentPath = pathname.replace(/\/$/, '') || '/';
+
+const navItems = [
+  { href: '/', label: 'Início' },
+  { href: '/capitulos', label: 'Capítulos' },
+  { href: '/projetos', label: 'Projetos' },
+  { href: '/aprendizados', label: 'Aprendizados' },
+  { href: '/pensamentos', label: 'Pensamentos' },
+  { href: '/contato', label: 'Contato' },
+];
 ---
 
 <nav class="main-nav" aria-label="Navegação principal">
   <ul class="nav-list">
-    <li class="nav-item">
-      <a href="/" class="nav-link">Início</a>
-    </li>
-    <li class="nav-item">
-      <a href="#capitulos" class="nav-link">Capítulos</a>
-    </li>
-    <li class="nav-item">
-      <a href="#projetos" class="nav-link">Projetos</a>
-    </li>
-    <li class="nav-item">
-      <a href="#aprendizados" class="nav-link">Aprendizados</a>
-    </li>
-    <li class="nav-item">
-      <a href="#pensamentos" class="nav-link">Pensamentos</a>
-    </li>
-    <li class="nav-item">
-      <a href="#contato" class="nav-link">Contato</a>
-    </li>
+    {navItems.map((item) => {
+      const isActive =
+        item.href === '/'
+          ? currentPath === '/'
+          : currentPath.startsWith(item.href);
+
+      return (
+        <li class="nav-item">
+          <a
+            href={item.href}
+            class:list={['nav-link', { 'is-active': isActive }]}
+            aria-current={isActive ? 'page' : undefined}
+          >
+            {item.label}
+          </a>
+        </li>
+      );
+    })}
   </ul>
 </nav>
 
@@ -51,6 +63,7 @@
   .nav-link {
     display: inline-flex;
     align-items: center;
+    min-height: 44px;
     padding: var(--space-2) var(--space-3);
     font-family: var(--font-body);
     font-size: var(--font-size-small);
@@ -59,12 +72,18 @@
     text-decoration: none;
     border-radius: var(--space-1);
     transition: color 0.2s ease, background-color 0.2s ease;
-    min-height: 44px; /* Área de toque confortável recomendada para acessibilidade e mobile */
   }
 
   .nav-link:hover {
     color: var(--color-secondary);
-    background-color: rgba(15, 118, 110, 0.08); /* Realce sutil em teal */
+    background-color: rgba(15, 118, 110, 0.08);
+  }
+
+  .nav-link.is-active {
+    color: var(--color-primary);
+    font-weight: 600;
+    border-bottom: 2px solid var(--color-secondary);
+    border-radius: 0;
   }
 
   .nav-link:focus-visible {

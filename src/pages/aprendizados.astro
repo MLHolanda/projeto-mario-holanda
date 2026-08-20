@@ -1,0 +1,189 @@
+---
+// src/pages/aprendizados.astro
+// Página-Índice de Aprendizados — Projeto Mário Holanda
+// Responsabilidade: Apresentar a jornada contínua de estudos, conhecimentos e evolução
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Aprendizados — Mário Holanda"
+  description="Estudos contínuos, conhecimentos, ferramentas e reflexões sobre a jornada de aprendizado."
+>
+  <section class="page-section" aria-labelledby="page-title">
+    <div class="container-reading content-container">
+      <header class="section-header">
+        <p class="page-eyebrow">Conhecimento em Construção</p>
+        <h1 id="page-title" class="page-title">Aprendizados</h1>
+        <p class="page-concept">Aprender é um processo contínuo e sem linha de chegada.</p>
+      </header>
+
+      <div class="narrative-body">
+        <p>
+          O conhecimento nesta jornada não é tratado como uma lista estática de tecnologias
+          ou um currículo formal. Ele reflete a curiosidade constante, os estudos aprofundados,
+          as práticas diárias e os desafios reais enfrentados ao longo do caminho.
+        </p>
+        <p>
+          Das bases do desenvolvimento de software às explorações com inteligência artificial,
+          cada conceito absorvido ganha sentido quando aplicado com propósito e consciência.
+        </p>
+      </div>
+
+      <div class="learning-dimensions">
+        <div class="dimension-card">
+          <h2 class="dimension-title">Estudos & Ferramentas</h2>
+          <p class="dimension-text">
+            Explorações contínuas sobre arquitetura, desenvolvimento moderno e novas tecnologias,
+            utilizadas como instrumentos de autonomia e criação.
+          </p>
+        </div>
+
+        <div class="dimension-card">
+          <h2 class="dimension-title">Certificados & Marcos</h2>
+          <p class="dimension-text">
+            Certificações e conquistas compreendidas como marcos narrativos da trajetória,
+            valorizando o esforço e o aprendizado que antecederam cada conquista.
+          </p>
+        </div>
+      </div>
+
+      <div class="construction-note">
+        <p class="note-title">Estrutura em desenvolvimento</p>
+        <p class="note-text">
+          As sínteses de estudos, trilhas e marcos de conhecimento estão sendo organizadas
+          para compartilhamento gradual.
+        </p>
+        <p class="note-quote">
+          <em>"Estamos construindo o projeto enquanto construímos a capacidade de construí-lo."</em>
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-section {
+    padding-top: var(--space-8);
+    padding-bottom: var(--space-9);
+    min-height: 50vh;
+  }
+
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .section-header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .page-eyebrow {
+    font-family: var(--font-body);
+    font-size: var(--font-size-small);
+    font-weight: 600;
+    color: var(--color-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .page-title {
+    font-family: var(--font-headings);
+    font-size: var(--font-size-h1);
+    line-height: var(--line-height-h1);
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+
+  .page-concept {
+    font-family: var(--font-headings);
+    font-size: var(--font-size-h3);
+    line-height: var(--line-height-h3);
+    color: var(--color-secondary);
+    font-weight: 700;
+  }
+
+  .narrative-body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    color: var(--color-text);
+  }
+
+  .narrative-body p {
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
+    max-width: 65ch;
+  }
+
+  .learning-dimensions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .dimension-card {
+    padding: var(--space-5);
+    background-color: var(--color-white);
+    border-radius: var(--space-1);
+    border: 1px solid rgba(11, 31, 58, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .dimension-title {
+    font-family: var(--font-headings);
+    font-size: var(--font-size-h3);
+    line-height: var(--line-height-h3);
+    color: var(--color-primary);
+  }
+
+  .dimension-text {
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
+    color: var(--color-text);
+  }
+
+  .construction-note {
+    margin-top: var(--space-2);
+    padding: var(--space-5);
+    background-color: var(--color-white);
+    border-left: 3px solid var(--color-secondary);
+    border-radius: 0 var(--space-1) var(--space-1) 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .note-title {
+    font-family: var(--font-headings);
+    font-size: var(--font-size-body);
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+
+  .note-text {
+    font-family: var(--font-body);
+    font-size: var(--font-size-small);
+    line-height: var(--line-height-small);
+    color: var(--color-text);
+  }
+
+  .note-quote {
+    margin-top: var(--space-2);
+    font-family: var(--font-headings);
+    font-size: var(--font-size-small);
+    color: var(--color-secondary);
+  }
+
+  @media (max-width: 767px) {
+    .page-section {
+      padding-top: var(--space-6);
+      padding-bottom: var(--space-6);
+    }
+  }
+</style>

@@ -1,0 +1,140 @@
+---
+// src/pages/pensamentos.astro
+// Página-Índice de Pensamentos — Projeto Mário Holanda
+// Responsabilidade: Apresentar o espaço de reflexões pessoais, ideias e descobertas
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Pensamentos — Mário Holanda"
+  description="Reflexões, ideias, perguntas e percepções pessoais ao longo do caminho."
+>
+  <section class="page-section" aria-labelledby="page-title">
+    <div class="container-reading content-container">
+      <header class="section-header">
+        <p class="page-eyebrow">Reflexões e Ideias</p>
+        <h1 id="page-title" class="page-title">Pensamentos</h1>
+        <p class="page-concept">Ideias em desenvolvimento, perguntas e descobertas.</p>
+      </header>
+
+      <div class="narrative-body">
+        <p>
+          Este é um espaço pessoal e intimista, distinto do Blog. Foi concebido para acolher
+          pensamentos livres, anotações de descobertas, questionamentos honestos e percepções
+          sobre tecnologia, criação e vida.
+        </p>
+        <p>
+          Nem toda reflexão precisa chegar a uma conclusão definitiva. Muitas vezes, o valor
+          está na própria pergunta e no exercício de pensar com calma e profundidade.
+        </p>
+      </div>
+
+      <div class="construction-note">
+        <p class="note-title">Reflexões em maturação</p>
+        <p class="note-text">
+          Textos, anotações e pensamentos estão sendo reunidos para publicação ao longo do tempo.
+        </p>
+        <p class="note-quote">
+          <em>"Estar presente sem tentar aparecer."</em>
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .page-section {
+    padding-top: var(--space-8);
+    padding-bottom: var(--space-9);
+    min-height: 50vh;
+  }
+
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .section-header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .page-eyebrow {
+    font-family: var(--font-body);
+    font-size: var(--font-size-small);
+    font-weight: 600;
+    color: var(--color-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .page-title {
+    font-family: var(--font-headings);
+    font-size: var(--font-size-h1);
+    line-height: var(--line-height-h1);
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+
+  .page-concept {
+    font-family: var(--font-headings);
+    font-size: var(--font-size-h3);
+    line-height: var(--line-height-h3);
+    color: var(--color-secondary);
+    font-weight: 700;
+  }
+
+  .narrative-body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    color: var(--color-text);
+  }
+
+  .narrative-body p {
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
+    max-width: 65ch;
+  }
+
+  .construction-note {
+    margin-top: var(--space-4);
+    padding: var(--space-5);
+    background-color: var(--color-white);
+    border-left: 3px solid var(--color-secondary);
+    border-radius: 0 var(--space-1) var(--space-1) 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .note-title {
+    font-family: var(--font-headings);
+    font-size: var(--font-size-body);
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+
+  .note-text {
+    font-family: var(--font-body);
+    font-size: var(--font-size-small);
+    line-height: var(--line-height-small);
+    color: var(--color-text);
+  }
+
+  .note-quote {
+    margin-top: var(--space-2);
+    font-family: var(--font-headings);
+    font-size: var(--font-size-small);
+    color: var(--color-secondary);
+  }
+
+  @media (max-width: 767px) {
+    .page-section {
+      padding-top: var(--space-6);
+      padding-bottom: var(--space-6);
+    }
+  }
+</style>
