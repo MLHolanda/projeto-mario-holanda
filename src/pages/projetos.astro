@@ -1,54 +1,83 @@
 ---
 // src/pages/projetos.astro
-// Página-Índice de Projetos — Projeto Mário Holanda
-// Responsabilidade: Apresentar os projetos como expressão da trajetória e aprendizado
+// Página de Projetos — Projeto Mário Holanda
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
   title="Projetos — Mário Holanda"
-  description="Construções, iniciativas e projetos que expressam a evolução prática da trajetória."
+  description="Projetos, aprendizados e construções que fazem parte de uma jornada em constante evolução."
 >
   <section class="page-section" aria-labelledby="page-title">
     <div class="container-reading content-container">
+
       <header class="section-header">
         <p class="page-eyebrow">Criação e Prática</p>
         <h1 id="page-title" class="page-title">Projetos</h1>
-        <p class="page-concept">Construções que refletem aprendizados e momentos da jornada.</p>
+        <p class="page-concept">
+          Ideias que deixam de ficar apenas na cabeça e começam a ganhar forma.
+        </p>
       </header>
 
       <div class="narrative-body">
         <p>
-          Aqui, os projetos não são encarados como uma vitrine estática de resultados, mas como
-          marcos vivos de evolução. Cada iniciativa carrega seu contexto, os motivos que levaram
-          à sua criação, os desafios superados e o conhecimento adquirido durante o processo.
+          Nem todo projeto começa com uma ideia completamente definida.
         </p>
+
         <p>
-          Projetos anteriores e novos experimentos convivem como registros autênticos de
-          cada etapa da caminhada.
+          Às vezes, começa apenas com uma vontade de aprender, entender como algo
+          funciona e tentar transformar uma ideia em algo real.
         </p>
       </div>
 
-      <div class="project-highlight">
-        <h2 class="highlight-title">Blog</h2>
-        <p class="highlight-concept">Projeto Independente</p>
-        <p class="highlight-description">
-          O Blog é um espaço já existente e consolidado. Ele segue como um projeto independente,
-          preservando sua própria estrutura, identidade e publicações, conectando-se a este
-          ecossistema de forma natural.
-        </p>
-      </div>
+      <article class="project-highlight">
+        <p class="project-label">Em construção</p>
+
+        <h2 class="highlight-title">Projeto Mário Holanda</h2>
+
+        <div class="highlight-description">
+          <p>
+            Este próprio site nasceu assim.
+          </p>
+
+          <p>
+            Ele não foi criado para apresentar uma versão pronta ou perfeita de mim.
+            Pelo contrário. Ele está sendo construído enquanto eu continuo aprendendo,
+            estudando, cometendo erros, corrigindo caminhos e descobrindo novas
+            possibilidades.
+          </p>
+
+          <p>
+            Aqui, cada decisão faz parte de uma construção compartilhada. Eu trago
+            minhas ideias, experiências, dúvidas e vontades. A inteligência artificial
+            caminha ao meu lado, ajudando a organizar, questionar, transformar e construir.
+          </p>
+
+          <p>O resultado não é algo pronto.</p>
+
+          <p><strong>É um projeto vivo.</strong></p>
+
+          <p>
+            Este espaço continuará mudando, recebendo novos conteúdos, novas ideias e,
+            naturalmente, outros projetos que também fazem parte dessa caminhada.
+          </p>
+
+          <p>
+            Porque alguns projetos não aparecem quando estão terminados.
+          </p>
+
+          <p><strong>Eles aparecem enquanto estão sendo construídos.</strong></p>
+        </div>
+      </article>
 
       <div class="construction-note">
-        <p class="note-title">Projetos em organização</p>
+        <p class="note-title">A caminhada continua</p>
         <p class="note-text">
-          O catálogo narrativo dos projetos, experimentos e criações está sendo estruturado
-          para apresentação detalhada de suas histórias e aprendizados.
-        </p>
-        <p class="note-quote">
-          <em>"A publicação não encerra o capítulo. Ela permite que o próximo seja escrito."</em>
+          Outros projetos também fazem parte desta trajetória. Aos poucos, eles
+          encontrarão seu espaço por aqui.
         </p>
       </div>
+
     </div>
   </section>
 </BaseLayout>
@@ -72,7 +101,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     gap: var(--space-2);
   }
 
-  .page-eyebrow {
+  .page-eyebrow,
+  .project-label {
     font-family: var(--font-body);
     font-size: var(--font-size-small);
     font-weight: 600;
@@ -111,40 +141,38 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   .project-highlight {
-    padding: var(--space-5);
-    background-color: var(--color-white);
-    border-radius: var(--space-1);
-    border: 1px solid rgba(11, 31, 58, 0.08);
     display: flex;
     flex-direction: column;
-    gap: var(--space-2);
+    gap: var(--space-4);
+    padding: var(--space-6);
+    background-color: var(--color-white);
+    border: 1px solid rgba(11, 31, 58, 0.1);
+    border-radius: var(--space-1);
   }
 
   .highlight-title {
     font-family: var(--font-headings);
-    font-size: var(--font-size-h3);
-    line-height: var(--line-height-h3);
+    font-size: var(--font-size-h2);
+    line-height: var(--line-height-h2);
     color: var(--color-primary);
-  }
-
-  .highlight-concept {
-    font-family: var(--font-body);
-    font-size: var(--font-size-caption);
-    font-weight: 600;
-    color: var(--color-secondary);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    font-weight: 700;
   }
 
   .highlight-description {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .highlight-description p {
     font-family: var(--font-body);
     font-size: var(--font-size-body);
     line-height: var(--line-height-body);
     color: var(--color-text);
+    max-width: 65ch;
   }
 
   .construction-note {
-    margin-top: var(--space-2);
     padding: var(--space-5);
     background-color: var(--color-white);
     border-left: 3px solid var(--color-secondary);
@@ -168,17 +196,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     color: var(--color-text);
   }
 
-  .note-quote {
-    margin-top: var(--space-2);
-    font-family: var(--font-headings);
-    font-size: var(--font-size-small);
-    color: var(--color-secondary);
-  }
-
   @media (max-width: 767px) {
     .page-section {
       padding-top: var(--space-6);
       padding-bottom: var(--space-6);
+    }
+
+    .project-highlight {
+      padding: var(--space-5);
     }
   }
 </style>

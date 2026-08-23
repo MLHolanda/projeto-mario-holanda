@@ -1,56 +1,65 @@
 ---
 // src/pages/contato.astro
-// Página-Índice de Contato — Projeto Mário Holanda
-// Responsabilidade: Apresentar caminhos conceituais e humanos de diálogo e conexão
+// Página de Contato — Projeto Mário Holanda
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
   title="Contato — Mário Holanda"
-  description="Caminhos de diálogo, troca de ideias e conexão humana."
+  description="Um espaço aberto para conversas, ideias e novas conexões."
 >
   <section class="page-section" aria-labelledby="page-title">
     <div class="container-reading content-container">
+
       <header class="section-header">
         <p class="page-eyebrow">Conexão e Diálogo</p>
         <h1 id="page-title" class="page-title">Contato</h1>
-        <p class="page-concept">Pontes para conversas, parcerias e troca de experiências.</p>
+        <p class="page-concept">
+          Toda conversa começa de algum lugar.
+        </p>
       </header>
 
       <div class="narrative-body">
         <p>
-          O contato representa a abertura para o diálogo humano, a escuta e a conexão
-          verdadeira. Seja para trocar ideias sobre tecnologia e inteligência artificial,
-          conversar sobre projetos ou compartilhar reflexões, este espaço é um convite
-          à proximidade.
+          Nem todo contato precisa começar com uma grande proposta ou uma ideia pronta.
         </p>
+
         <p>
-          Acreditamos em conversas que agregam valor e respeitam o tempo e a privacidade
-          de cada pessoa.
+          Às vezes, uma conversa começa simplesmente porque duas pessoas encontraram
+          algo em comum para compartilhar.
+        </p>
+
+        <p>
+          Este espaço está aberto para conversar sobre projetos, tecnologia,
+          inteligência artificial, aprendizados ou qualquer ideia que possa surgir
+          pelo caminho.
+        </p>
+
+        <p>
+          Se quiser entrar em contato, deixe sua mensagem.
         </p>
       </div>
 
-      <div class="contact-channels">
-        <div class="channel-card">
-          <h2 class="channel-title">Interação Direta</h2>
-          <p class="channel-description">
-            Os canais formais e diretos de comunicação estão sendo definidos para proporcionar
-            uma experiência de contato simples, acessível e segura, sem intermediários desnecessários
-            ou coleta invasiva de dados.
-          </p>
-        </div>
+      <div class="contact-action">
+        <h2 class="contact-title">Vamos conversar?</h2>
+
+        <p class="contact-description">
+          Esta será uma porta de entrada para novas conversas, ideias e conexões.
+          Aos poucos, também vamos construindo novas formas de manter esse contato.
+        </p>
+
+        <a href="#" class="contact-button">
+          Enviar uma mensagem →
+        </a>
       </div>
 
       <div class="construction-note">
-        <p class="note-title">Canais em estruturação</p>
         <p class="note-text">
-          As formas de conexão direta e redes de contato serão disponibilizadas de forma
-          clara e transparente nos próximos passos do projeto.
-        </p>
-        <p class="note-quote">
-          <em>"Um Capítulo de Cada Vez."</em>
+          Os canais de contato estão sendo preparados. Esta página continuará
+          evoluindo junto com o restante do projeto.
         </p>
       </div>
+
     </div>
   </section>
 </BaseLayout>
@@ -103,61 +112,68 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     display: flex;
     flex-direction: column;
     gap: var(--space-4);
-    color: var(--color-text);
   }
 
   .narrative-body p {
-    font-size: var(--font-size-body);
-    line-height: var(--line-height-body);
-    max-width: 65ch;
-  }
-
-  .contact-channels {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-4);
-  }
-
-  .channel-card {
-    padding: var(--space-5);
-    background-color: var(--color-white);
-    border-radius: var(--space-1);
-    border: 1px solid rgba(11, 31, 58, 0.08);
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2);
-  }
-
-  .channel-title {
-    font-family: var(--font-headings);
-    font-size: var(--font-size-h3);
-    line-height: var(--line-height-h3);
-    color: var(--color-primary);
-  }
-
-  .channel-description {
     font-family: var(--font-body);
     font-size: var(--font-size-body);
     line-height: var(--line-height-body);
     color: var(--color-text);
+    max-width: 65ch;
+  }
+
+  .contact-action {
+    padding: var(--space-6);
+    background-color: var(--color-white);
+    border: 1px solid rgba(11, 31, 58, 0.1);
+    border-radius: var(--space-1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+  }
+
+  .contact-title {
+    font-family: var(--font-headings);
+    font-size: var(--font-size-h2);
+    line-height: var(--line-height-h2);
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+
+  .contact-description {
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
+    color: var(--color-text);
+    max-width: 60ch;
+  }
+
+  .contact-button {
+    display: inline-block;
+    margin-top: var(--space-2);
+    padding: var(--space-3) var(--space-5);
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: var(--space-1);
+  }
+
+  .contact-button:hover {
+    text-decoration: underline;
+  }
+
+  .contact-button:focus-visible {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 3px;
   }
 
   .construction-note {
-    margin-top: var(--space-2);
     padding: var(--space-5);
-    background-color: var(--color-white);
     border-left: 3px solid var(--color-secondary);
-    border-radius: 0 var(--space-1) var(--space-1) 0;
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2);
-  }
-
-  .note-title {
-    font-family: var(--font-headings);
-    font-size: var(--font-size-body);
-    font-weight: 700;
-    color: var(--color-primary);
   }
 
   .note-text {
@@ -167,17 +183,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     color: var(--color-text);
   }
 
-  .note-quote {
-    margin-top: var(--space-2);
-    font-family: var(--font-headings);
-    font-size: var(--font-size-small);
-    color: var(--color-secondary);
-  }
-
   @media (max-width: 767px) {
     .page-section {
       padding-top: var(--space-6);
       padding-bottom: var(--space-6);
+    }
+
+    .contact-action {
+      padding: var(--space-5);
     }
   }
 </style>

@@ -29,11 +29,30 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </p>
       </div>
 
+      <section class="chapters-list" aria-label="Capítulos publicados">
+        <article class="chapter-card">
+          <p class="chapter-number">Capítulo 1</p>
+
+          <h2 class="chapter-title">O começo</h2>
+
+          <p class="chapter-date">21 de agosto de 2026</p>
+
+          <p class="chapter-description">
+            Uma história sobre a vontade de aprender, as imperfeições do caminho
+            e a decisão de começar a construir algo novo.
+          </p>
+
+          <a href="/capitulos/01-o-comeco" class="chapter-link">
+            Ler capítulo →
+          </a>
+        </article>
+      </section>
+
       <div class="construction-note">
-        <p class="note-title">Capítulos em elaboração</p>
+        <p class="note-title">A história continua</p>
         <p class="note-text">
-          Os primeiros textos e histórias estão sendo cuidadosamente escritos e estruturados.
-          Em breve, novos capítulos serão publicados aqui.
+          Este é apenas o primeiro capítulo. Novas histórias, lembranças e momentos
+          continuarão sendo registrados ao longo da caminhada.
         </p>
         <p class="note-quote">
           <em>"O livro não precisa estar terminado para começar a ser lido."</em>
@@ -62,7 +81,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     gap: var(--space-2);
   }
 
-  .page-eyebrow {
+  .page-eyebrow,
+  .chapter-number {
     font-family: var(--font-body);
     font-size: var(--font-size-small);
     font-weight: 600;
@@ -98,6 +118,61 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     font-size: var(--font-size-body);
     line-height: var(--line-height-body);
     max-width: 65ch;
+  }
+
+  .chapters-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .chapter-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+    padding: var(--space-6);
+    border: 1px solid rgba(11, 31, 58, 0.1);
+    border-radius: var(--space-1);
+  }
+
+  .chapter-title {
+    font-family: var(--font-headings);
+    font-size: var(--font-size-h2);
+    line-height: var(--line-height-h2);
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+
+  .chapter-date {
+    font-family: var(--font-body);
+    font-size: var(--font-size-small);
+    color: var(--color-text);
+    opacity: 0.7;
+  }
+
+  .chapter-description {
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
+    color: var(--color-text);
+    max-width: 60ch;
+  }
+
+  .chapter-link {
+    font-family: var(--font-body);
+    font-size: var(--font-size-small);
+    font-weight: 600;
+    color: var(--color-secondary);
+    text-decoration: none;
+  }
+
+  .chapter-link:hover {
+    text-decoration: underline;
+  }
+
+  .chapter-link:focus-visible {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 3px;
   }
 
   .construction-note {
@@ -136,6 +211,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     .page-section {
       padding-top: var(--space-6);
       padding-bottom: var(--space-6);
+    }
+
+    .chapter-card {
+      padding: var(--space-5);
     }
   }
 </style>

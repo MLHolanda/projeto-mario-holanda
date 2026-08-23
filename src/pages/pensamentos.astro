@@ -1,43 +1,104 @@
 ---
 // src/pages/pensamentos.astro
-// Página-Índice de Pensamentos — Projeto Mário Holanda
-// Responsabilidade: Apresentar o espaço de reflexões pessoais, ideias e descobertas
+// Página de Pensamentos — Projeto Mário Holanda
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
   title="Pensamentos — Mário Holanda"
-  description="Reflexões, ideias, perguntas e percepções pessoais ao longo do caminho."
+  description="Reflexões, dúvidas e pensamentos que surgem ao longo da caminhada."
 >
   <section class="page-section" aria-labelledby="page-title">
     <div class="container-reading content-container">
+
       <header class="section-header">
         <p class="page-eyebrow">Reflexões e Ideias</p>
         <h1 id="page-title" class="page-title">Pensamentos</h1>
-        <p class="page-concept">Ideias em desenvolvimento, perguntas e descobertas.</p>
+        <p class="page-concept">
+          Algumas ideias não precisam chegar a uma conclusão.
+          Às vezes, basta deixá-las existir.
+        </p>
       </header>
 
       <div class="narrative-body">
         <p>
-          Este é um espaço pessoal e intimista, distinto do Blog. Foi concebido para acolher
-          pensamentos livres, anotações de descobertas, questionamentos honestos e percepções
-          sobre tecnologia, criação e vida.
+          Este espaço é para reflexões, dúvidas e pensamentos que surgem ao longo
+          da caminhada.
         </p>
+
         <p>
-          Nem toda reflexão precisa chegar a uma conclusão definitiva. Muitas vezes, o valor
-          está na própria pergunta e no exercício de pensar com calma e profundidade.
+          Nem tudo precisa ser uma história. Nem tudo precisa se transformar em
+          aprendizado. Algumas coisas simplesmente nos fazem pensar.
         </p>
       </div>
 
+      <article class="thought-highlight">
+        <p class="thought-label">Um pensamento</p>
+
+        <h2 class="thought-title">O futuro que eu não vou ver</h2>
+
+        <div class="thought-content">
+          <p>Tenho pensado muito sobre inteligência artificial.</p>
+
+          <p>
+            Não conheço tudo que existe por trás dela. Não sei exatamente como funciona
+            internamente, nem até onde essa tecnologia poderá chegar.
+          </p>
+
+          <p>Mas sei o que ela representa para mim hoje.</p>
+
+          <p>
+            Talvez a inteligência artificial seja uma das maiores descobertas que tive
+            a oportunidade de presenciar durante a minha vida. Não uma descoberta feita
+            por mim, naturalmente, mas algo criado por outras pessoas e que chegou até
+            mim a tempo de fazer parte da minha história.
+          </p>
+
+          <p>E isso me faz pensar no futuro.</p>
+
+          <p>
+            Sei que existe um futuro muito maior do que aquele que eu conseguirei viver.
+            Haverá tecnologias, descobertas, mudanças e talvez maneiras completamente
+            diferentes de viver que eu nunca conhecerei.
+          </p>
+
+          <p>Às vezes fico imaginando como será esse mundo.</p>
+
+          <p>
+            O que a inteligência artificial terá se tornado? Como as pessoas viverão?
+            O que terão aprendido com os nossos acertos e, principalmente, com os
+            nossos erros?
+          </p>
+
+          <p>Eu não estarei aqui para descobrir tudo isso.</p>
+
+          <p>
+            Mas tive a oportunidade de assistir ao começo de uma transformação enorme.
+            Mais do que assistir, pude experimentar um pequeno pedaço dela.
+          </p>
+
+          <p>E isso já é extraordinário.</p>
+
+          <p>
+            Só espero que todo esse conhecimento ajude a construir um mundo melhor.
+          </p>
+
+          <p class="thought-emphasis"><strong>Tomara que seja.</strong></p>
+
+          <p>
+            Porque, olhando para o mundo de hoje, às vezes eu também tenho minhas dúvidas.
+          </p>
+        </div>
+      </article>
+
       <div class="construction-note">
-        <p class="note-title">Reflexões em maturação</p>
+        <p class="note-title">Outros pensamentos virão</p>
         <p class="note-text">
-          Textos, anotações e pensamentos estão sendo reunidos para publicação ao longo do tempo.
-        </p>
-        <p class="note-quote">
-          <em>"Estar presente sem tentar aparecer."</em>
+          Este espaço continuará recebendo ideias, dúvidas e reflexões que fizerem
+          sentido registrar ao longo da caminhada.
         </p>
       </div>
+
     </div>
   </section>
 </BaseLayout>
@@ -61,7 +122,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     gap: var(--space-2);
   }
 
-  .page-eyebrow {
+  .page-eyebrow,
+  .thought-label {
     font-family: var(--font-body);
     font-size: var(--font-size-small);
     font-weight: 600;
@@ -86,21 +148,47 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     font-weight: 700;
   }
 
-  .narrative-body {
+  .narrative-body,
+  .thought-content {
     display: flex;
     flex-direction: column;
     gap: var(--space-4);
-    color: var(--color-text);
   }
 
-  .narrative-body p {
+  .narrative-body p,
+  .thought-content p {
+    font-family: var(--font-body);
     font-size: var(--font-size-body);
     line-height: var(--line-height-body);
+    color: var(--color-text);
     max-width: 65ch;
   }
 
+  .thought-highlight {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    padding: var(--space-6);
+    background-color: var(--color-white);
+    border: 1px solid rgba(11, 31, 58, 0.1);
+    border-radius: var(--space-1);
+  }
+
+  .thought-title {
+    font-family: var(--font-headings);
+    font-size: var(--font-size-h2);
+    line-height: var(--line-height-h2);
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+
+  .thought-emphasis {
+    font-family: var(--font-headings) !important;
+    font-size: var(--font-size-h3) !important;
+    color: var(--color-primary) !important;
+  }
+
   .construction-note {
-    margin-top: var(--space-4);
     padding: var(--space-5);
     background-color: var(--color-white);
     border-left: 3px solid var(--color-secondary);
@@ -124,17 +212,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     color: var(--color-text);
   }
 
-  .note-quote {
-    margin-top: var(--space-2);
-    font-family: var(--font-headings);
-    font-size: var(--font-size-small);
-    color: var(--color-secondary);
-  }
-
   @media (max-width: 767px) {
     .page-section {
       padding-top: var(--space-6);
       padding-bottom: var(--space-6);
+    }
+
+    .thought-highlight {
+      padding: var(--space-5);
     }
   }
 </style>

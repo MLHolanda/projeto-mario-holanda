@@ -1,0 +1,247 @@
+---
+// src/pages/capitulos/01-o-comeco.astro
+// Capítulo 1 — O começo
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="O começo — Mário Holanda"
+  description="O primeiro capítulo da história por trás do Projeto Mário Holanda."
+>
+  <article class="chapter">
+    <div class="container-reading chapter-container">
+
+      <header class="chapter-header">
+        <a href="/capitulos" class="back-link">← Voltar para Capítulos</a>
+
+        <p class="chapter-number">Capítulo 1</p>
+
+        <h1 class="chapter-title">O começo</h1>
+
+        <p class="chapter-date">21 de agosto de 2026</p>
+      </header>
+
+      <div class="chapter-content">
+
+        <p>Durante muito tempo, eu tive vontade de aprender.</p>
+
+        <p>
+          Sempre gostei de descobrir como as coisas funcionam, de tentar entender,
+          de fazer cursos e de imaginar projetos. Mas também preciso ser honesto:
+          nem sempre conseguia terminar tudo o que começava.
+        </p>
+
+        <p>
+          Algumas coisas ficavam pelo caminho. Outras eu interrompia. Às vezes por
+          dificuldade, outras vezes porque aparecia uma nova ideia e minha atenção
+          ia para outro lugar.
+        </p>
+
+        <p>Isso também faz parte de quem eu sou.</p>
+
+        <p>
+          Tenho curiosidade. Gosto de aprender. Me empolgo quando descubro algo novo.
+          Mas, junto com isso, também existem inseguranças, dúvidas e a sensação de
+          que ainda tenho muito para aprender.
+        </p>
+
+        <p>
+          E talvez tenha sido justamente por isso que essa nova etapa tenha feito
+          tanto sentido para mim.
+        </p>
+
+        <p>
+          Quando comecei a estudar mais sobre inteligência artificial e uma nova forma
+          de criar projetos, algo mudou. Não porque, de repente, tudo ficou fácil.
+          Mas porque comecei a perceber que talvez eu não precisasse caminhar sozinho
+          em tudo.
+        </p>
+
+        <p>A inteligência artificial poderia ajudar.</p>
+
+        <p>
+          Mas eu não queria simplesmente apertar um botão e assistir alguém — ou alguma
+          coisa — fazer tudo por mim.
+        </p>
+
+        <p>Eu queria participar.</p>
+
+        <p>
+          Queria aprender enquanto construía. Queria entender, perguntar, errar,
+          corrigir e, principalmente, poder dizer: <strong>eu fiz parte disso</strong>.
+        </p>
+
+        <p>Foi assim que essa parceria começou a ganhar forma.</p>
+
+        <p>
+          De um lado, eu trazia as ideias, as dúvidas, as vontades e também as minhas
+          imperfeições. Do outro, havia uma inteligência artificial capaz de ajudar
+          a organizar pensamentos, explicar coisas que eu ainda não entendia e
+          transformar conversas em possibilidades.
+        </p>
+
+        <p>Nenhum dos dois faria tudo sozinho.</p>
+
+        <p>
+          Eu continuaria sendo quem vive a história, quem sente as frustrações,
+          quem se anima quando algo finalmente funciona e quem decide para onde seguir.
+        </p>
+
+        <p>A IA estaria ao meu lado.</p>
+
+        <p>
+          Não para viver por mim. Nem para criar uma versão artificial de quem eu sou.
+        </p>
+
+        <p>Mas para ajudar a construir.</p>
+
+        <p>
+          Aos poucos, percebi que os projetos poderiam ser diferentes dessa vez.
+        </p>
+
+        <p>Não precisava sair fazendo tudo de qualquer maneira.</p>
+
+        <p>
+          Podíamos parar, conversar, pensar e documentar antes de começar. Podíamos
+          entender melhor o que queríamos construir. E, se fosse necessário mudar de
+          caminho, tudo bem — desde que soubéssemos por que estávamos mudando.
+        </p>
+
+        <p>Foi assim que nasceu este projeto.</p>
+
+        <p>Ele não começou apenas com um código ou com uma página em branco.</p>
+
+        <p>Começou com uma vontade.</p>
+
+        <p>A vontade de aprender mais.</p>
+
+        <p>De terminar coisas.</p>
+
+        <p>
+          De transformar ideias que antes ficavam apenas na cabeça em algo real.
+        </p>
+
+        <p>
+          E também de criar um espaço que pudesse, aos poucos, mostrar quem eu sou.
+        </p>
+
+        <p>
+          Não como alguém perfeito, nem como alguém que já chegou onde queria.
+        </p>
+
+        <p>Mas como alguém que continua aprendendo.</p>
+
+        <p>Este site, de certa forma, é parecido comigo.</p>
+
+        <p>Ainda está em construção.</p>
+
+        <p>
+          Algumas partes já existem. Outras ainda precisam ser descobertas. E certamente
+          haverá coisas que mudaremos no caminho.
+        </p>
+
+        <p>Mas desta vez eu decidi começar.</p>
+
+        <p>
+          E, talvez mais importante do que isso, decidi não construir sozinho.
+        </p>
+
+        <p class="chapter-closing">
+          <strong>
+            Eu conduzo a história. A inteligência artificial caminha comigo.
+            E, juntos, vamos construindo — um capítulo de cada vez.
+          </strong>
+        </p>
+
+      </div>
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .chapter {
+    padding-top: var(--space-8);
+    padding-bottom: var(--space-9);
+  }
+
+  .chapter-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-7);
+  }
+
+  .chapter-header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .back-link {
+    align-self: flex-start;
+    font-family: var(--font-body);
+    font-size: var(--font-size-small);
+    font-weight: 600;
+    color: var(--color-secondary);
+    text-decoration: none;
+  }
+
+  .back-link:hover {
+    text-decoration: underline;
+  }
+
+  .back-link:focus-visible {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 3px;
+  }
+
+  .chapter-number {
+    font-family: var(--font-body);
+    font-size: var(--font-size-small);
+    font-weight: 600;
+    color: var(--color-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .chapter-title {
+    font-family: var(--font-headings);
+    font-size: var(--font-size-h1);
+    line-height: var(--line-height-h1);
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+
+  .chapter-date {
+    font-family: var(--font-body);
+    font-size: var(--font-size-small);
+    color: var(--color-text);
+    opacity: 0.7;
+  }
+
+  .chapter-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    max-width: 65ch;
+  }
+
+  .chapter-content p {
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
+    color: var(--color-text);
+  }
+
+  .chapter-closing {
+    margin-top: var(--space-5);
+    padding-top: var(--space-5);
+    border-top: 1px solid rgba(11, 31, 58, 0.1);
+  }
+
+  @media (max-width: 767px) {
+    .chapter {
+      padding-top: var(--space-6);
+      padding-bottom: var(--space-7);
+    }
+  }
+</style>
