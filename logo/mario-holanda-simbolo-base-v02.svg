@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 1000 1200"
+   role="img"
+   aria-labelledby="title desc"
+   version="1.1"
+   id="svg55"
+   sodipodi:docname="mario-holanda-simbolo-base-v01.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs59" />
+  <sodipodi:namedview
+     id="namedview57"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="0.62333333"
+     inkscape:cx="499.73262"
+     inkscape:cy="600"
+     inkscape:window-width="1920"
+     inkscape:window-height="996"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg55" />
+  <title
+     id="title">Símbolo base Mário Holanda</title>
+  <desc
+     id="desc">Construção vetorial editável do monograma M e H integrado a um tronco de árvore, com raízes e seta ascendente.</desc>
+  <g
+     id="raizes"
+     fill="none"
+     stroke="#C9A227"
+     stroke-width="24"
+     stroke-linecap="round"
+     stroke-linejoin="round">
+    <path
+       d="M500 820 C500 900 500 955 455 1040 C425 1095 365 1125 285 1150"
+       id="path4" />
+    <path
+       d="M485 840 C440 925 395 965 300 1005 C235 1035 180 1090 130 1145"
+       id="path6" />
+    <path
+       d="M515 840 C560 925 605 965 700 1005 C765 1035 820 1090 870 1145"
+       id="path8" />
+    <path
+       d="M530 820 C530 900 535 955 580 1040 C610 1095 670 1125 750 1150"
+       id="path10" />
+    <path
+       d="M470 850 C420 910 365 920 285 920"
+       id="path12" />
+    <path
+       d="M530 850 C580 910 635 920 715 920"
+       id="path14" />
+  </g>
+  <g
+     id="estrutura-central"
+     fill="none"
+     stroke="#C9A227"
+     stroke-width="38"
+     stroke-linecap="round"
+     stroke-linejoin="round">
+    <path
+       d="M210 820 V570 L330 720 L470 570 V820"
+       id="path17" />
+    <path
+       d="M500 820 V410"
+       id="path19" />
+    <path
+       d="M500 610 H690"
+       id="path21" />
+    <path
+       d="M690 500 V820"
+       id="path23" />
+  </g>
+  <g
+     id="galhos"
+     fill="none"
+     stroke="#C9A227"
+     stroke-width="25"
+     stroke-linecap="round"
+     stroke-linejoin="round">
+    <path
+       d="M500 520 C430 450 380 420 305 390"
+       id="path26" />
+    <path
+       d="M500 480 C565 420 620 365 700 300"
+       id="path28" />
+    <path
+       d="M500 450 C470 360 435 305 365 250"
+       id="path30" />
+    <path
+       d="M505 445 C550 355 595 305 650 245"
+       id="path32" />
+  </g>
+  <g
+     id="folhas"
+     fill="#0F766E">
+    <ellipse
+       cx="300"
+       cy="375"
+       rx="34"
+       ry="65"
+       transform="rotate(-48 300 375)"
+       id="ellipse35" />
+    <ellipse
+       cx="365"
+       cy="250"
+       rx="32"
+       ry="62"
+       transform="rotate(-20 365 250)"
+       id="ellipse37" />
+    <ellipse
+       cx="430"
+       cy="300"
+       rx="30"
+       ry="58"
+       transform="rotate(-42 430 300)"
+       id="ellipse39" />
+    <ellipse
+       cx="625"
+       cy="300"
+       rx="30"
+       ry="58"
+       transform="rotate(42 625 300)"
+       id="ellipse41" />
+    <ellipse
+       cx="690"
+       cy="245"
+       rx="32"
+       ry="62"
+       transform="rotate(20 690 245)"
+       id="ellipse43" />
+    <ellipse
+       cx="755"
+       cy="315"
+       rx="34"
+       ry="65"
+       transform="rotate(48 755 315)"
+       id="ellipse45" />
+    <ellipse
+       cx="485"
+       cy="260"
+       rx="31"
+       ry="64"
+       id="ellipse47" />
+  </g>
+  <g
+     id="seta"
+     fill="none"
+     stroke="#C9A227"
+     stroke-width="30"
+     stroke-linecap="round"
+     stroke-linejoin="round">
+    <path
+       d="M535 465 C650 410 720 320 800 175"
+       id="path50" />
+    <path
+       d="M720 205 L800 175 L790 265"
+       id="path52" />
+  </g>
+  <metadata
+     id="metadata77">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>Símbolo base Mário Holanda</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>
