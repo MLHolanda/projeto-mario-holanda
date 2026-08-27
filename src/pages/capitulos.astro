@@ -10,7 +10,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   description="Histórias, momentos e marcos de uma trajetória construída um capítulo de cada vez."
 >
   <section class="page-section" aria-labelledby="page-title">
-    <div class="container-reading content-container">
+    <div class="container-wide content-container">
       <header class="section-header">
         <p class="page-eyebrow">História e Trajetória</p>
         <h1 id="page-title" class="page-title">Capítulos</h1>
@@ -73,6 +73,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     display: flex;
     flex-direction: column;
     gap: var(--space-6);
+    max-width: 1000px;
   }
 
   .section-header {

@@ -101,12 +101,13 @@ Escala: `4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128px`
 
 ## 7. Layout e grid
 
--   Área de leitura: aproximadamente 720--760px.
--   Seções visuais: até aproximadamente 1200px.
--   Texto longo nunca ocupa toda a largura.
--   Projetos/cards: 2--3 colunas quando houver espaço.
--   Celular: uma coluna.
--   Telas grandes ganham respiro, não conteúdo excessivamente esticado.
+-   **Container principal (Desktop):** largura máxima de referência de **1000px** para páginas de conteúdo e leitura em desktop.
+    -   *Origem da decisão:* definida após testes comparando 760px, 1200px e 1000px, alcançando o equilíbrio ideal entre aproveitamento de tela, proporção dos componentes e conforto de leitura.
+    -   *Flexibilidade contextual:* a regra não é aplicada cegamente; páginas com grids, cards ou necessidades estruturais específicas podem adotar outras larguras (como seções visuais até ~1200px) quando o layout justificar.
+-   **Área de leitura e textos:** os blocos de texto mantêm limites próprios de conforto de leitura (aproximadamente 720--760px) e texto longo nunca deve ocupar toda a largura da tela.
+-   **Projetos e cards:** 2--3 colunas quando houver espaço no container/grid.
+-   **Mobile e responsividade:** comportamento responsivo preservado integralmente, adaptando-se para uma coluna no celular.
+-   **Telas grandes:** ganham respiro e margens laterais harmoniosas, evitando conteúdo excessivamente esticado.
 
 ## 8. Responsividade
 

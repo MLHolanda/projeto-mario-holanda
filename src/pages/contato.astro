@@ -1,12 +1,33 @@
 ---
 // src/pages/contato.astro
 // Página de Contato — Projeto Mário Holanda
+// Responsabilidade: Apresentar canais reais e diretos de comunicação e conexão
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const email = 'mariolucasholanda@gmail.com';
+const whatsapp = {
+  display: '+55 21 99881-0422',
+  url: 'https://wa.me/5521998810422',
+};
+const profiles = [
+  {
+    name: 'LinkedIn',
+    label: 'mario-holanda-91360420',
+    url: 'https://www.linkedin.com/in/mario-holanda-91360420/',
+    description: 'Trajetória profissional, conexões e reflexões.',
+  },
+  {
+    name: 'GitHub',
+    label: 'MLHolanda',
+    url: 'https://github.com/MLHolanda',
+    description: 'Repositórios, códigos e projetos em desenvolvimento.',
+  },
+];
 ---
 
 <BaseLayout
   title="Contato — Mário Holanda"
-  description="Um espaço aberto para conversas, ideias e novas conexões."
+  description="Um espaço aberto para conversas, ideias, trocas de experiências e novas conexões."
 >
   <section class="page-section" aria-labelledby="page-title">
     <div class="container-reading content-container">
@@ -34,29 +55,78 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           inteligência artificial, aprendizados ou qualquer ideia que possa surgir
           pelo caminho.
         </p>
-
-        <p>
-          Se quiser entrar em contato, deixe sua mensagem.
-        </p>
       </div>
 
-      <div class="contact-action">
-        <h2 class="contact-title">Vamos conversar?</h2>
+      <section class="contact-channels" aria-labelledby="direct-channels-title">
+        <h2 id="direct-channels-title" class="section-subtitle">Canais diretos</h2>
 
-        <p class="contact-description">
-          Esta será uma porta de entrada para novas conversas, ideias e conexões.
-          Aos poucos, também vamos construindo novas formas de manter esse contato.
-        </p>
+        <div class="channels-grid">
+          <article class="channel-card">
+            <p class="card-eyebrow">E-mail</p>
+            <h3 class="card-title">Mensagem direta</h3>
+            <p class="channel-info">{email}</p>
+            <p class="card-description">
+              Para mensagens detalhadas, ideias de projetos ou conversas aprofundadas.
+            </p>
+            <a
+              href={`mailto:${email}`}
+              class="btn-primary"
+              aria-label={`Enviar e-mail para ${email}`}
+            >
+              Enviar e-mail →
+            </a>
+          </article>
 
-        <a href="#" class="contact-button">
-          Enviar uma mensagem →
-        </a>
-      </div>
+          <article class="channel-card">
+            <p class="card-eyebrow">WhatsApp</p>
+            <h3 class="card-title">Conversa rápida</h3>
+            <p class="channel-info">{whatsapp.display}</p>
+            <p class="card-description">
+              Para contato ágil, alinhamentos diretos e mensagens instantâneas.
+            </p>
+            <a
+              href={whatsapp.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-secondary"
+              aria-label="Iniciar conversa no WhatsApp (abre em nova aba)"
+            >
+              Conversar no WhatsApp ↗
+            </a>
+          </article>
+        </div>
+      </section>
 
-      <div class="construction-note">
+      <section class="profiles-section" aria-labelledby="profiles-title">
+        <h2 id="profiles-title" class="section-subtitle">Presença profissional</h2>
+
+        <div class="profiles-grid">
+          {profiles.map((profile) => (
+            <article class="profile-card">
+              <p class="card-eyebrow">{profile.name}</p>
+              <h3 class="card-title">{profile.label}</h3>
+              <p class="card-description">{profile.description}</p>
+              <a
+                href={profile.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="profile-link"
+                aria-label={`Acessar perfil de Mário Holanda no ${profile.name} (abre em nova aba)`}
+              >
+                Acessar {profile.name} ↗
+              </a>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <div class="contact-note">
+        <p class="note-title">Presença e diálogo</p>
         <p class="note-text">
-          Os canais de contato estão sendo preparados. Esta página continuará
-          evoluindo junto com o restante do projeto.
+          Sinta-se à vontade para escolher o canal mais conveniente para você. Respondo assim que possível.
+        </p>
+        <p class="note-quote">
+          <em>"Um Capítulo de Cada Vez"</em>
         </p>
       </div>
 
@@ -74,7 +144,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .content-container {
     display: flex;
     flex-direction: column;
-    gap: var(--space-6);
+    gap: var(--space-7);
   }
 
   .section-header {
@@ -83,7 +153,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     gap: var(--space-2);
   }
 
-  .page-eyebrow {
+  .page-eyebrow,
+  .card-eyebrow {
     font-family: var(--font-body);
     font-size: var(--font-size-small);
     font-weight: 600;
@@ -108,6 +179,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     font-weight: 700;
   }
 
+  .section-subtitle {
+    font-family: var(--font-headings);
+    font-size: var(--font-size-h2);
+    line-height: var(--line-height-h2);
+    color: var(--color-primary);
+    font-weight: 700;
+    margin-bottom: var(--space-4);
+  }
+
   .narrative-body {
     display: flex;
     flex-direction: column;
@@ -122,58 +202,150 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     max-width: 65ch;
   }
 
-  .contact-action {
-    padding: var(--space-6);
-    background-color: var(--color-white);
-    border: 1px solid rgba(11, 31, 58, 0.1);
-    border-radius: var(--space-1);
+  .contact-channels,
+  .profiles-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .channels-grid,
+  .profiles-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-4);
+  }
+
+  .channel-card,
+  .profile-card {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: var(--space-3);
+    padding: var(--space-6);
+    background-color: var(--color-white);
+    border: 1px solid rgba(11, 31, 58, 0.1);
+    border-radius: var(--space-1);
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease,
+      transform 0.2s ease;
   }
 
-  .contact-title {
+  .channel-card:hover,
+  .profile-card:hover {
+    border-color: var(--color-secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(11, 31, 58, 0.05);
+  }
+
+  .card-title {
     font-family: var(--font-headings);
-    font-size: var(--font-size-h2);
-    line-height: var(--line-height-h2);
+    font-size: var(--font-size-h3);
+    line-height: var(--line-height-h3);
     color: var(--color-primary);
     font-weight: 700;
+    word-break: break-word;
   }
 
-  .contact-description {
+  .channel-info {
     font-family: var(--font-body);
-    font-size: var(--font-size-body);
-    line-height: var(--line-height-body);
-    color: var(--color-text);
-    max-width: 60ch;
+    font-size: var(--font-size-small);
+    font-weight: 600;
+    color: var(--color-secondary);
+    word-break: break-all;
   }
 
-  .contact-button {
-    display: inline-block;
-    margin-top: var(--space-2);
-    padding: var(--space-3) var(--space-5);
+  .card-description {
+    font-family: var(--font-body);
+    font-size: var(--font-size-small);
+    line-height: var(--line-height-small);
+    color: var(--color-text);
+    opacity: 0.9;
+  }
+
+  .btn-primary {
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: var(--space-2) var(--space-5);
     background-color: var(--color-primary);
     color: var(--color-white);
     font-family: var(--font-body);
-    font-size: var(--font-size-body);
+    font-size: var(--font-size-small);
     font-weight: 600;
     text-decoration: none;
     border-radius: var(--space-1);
+    transition: background-color 0.2s ease;
   }
 
-  .contact-button:hover {
+  .btn-primary:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+  }
+
+  .btn-secondary {
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: var(--space-2) var(--space-5);
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    font-family: var(--font-body);
+    font-size: var(--font-size-small);
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: var(--space-1);
+    transition: opacity 0.2s ease;
+  }
+
+  .btn-secondary:hover {
+    opacity: 0.9;
+    color: var(--color-white);
+  }
+
+  .profile-link {
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    font-family: var(--font-body);
+    font-size: var(--font-size-small);
+    font-weight: 600;
+    color: var(--color-secondary);
+    text-decoration: none;
+  }
+
+  .profile-link:hover {
     text-decoration: underline;
+    color: var(--color-primary);
   }
 
-  .contact-button:focus-visible {
+  .btn-primary:focus-visible,
+  .btn-secondary:focus-visible,
+  .profile-link:focus-visible {
     outline: 2px solid var(--color-secondary);
     outline-offset: 3px;
   }
 
-  .construction-note {
+  .contact-note {
     padding: var(--space-5);
+    background-color: var(--color-white);
     border-left: 3px solid var(--color-secondary);
+    border-radius: 0 var(--space-1) var(--space-1) 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .note-title {
+    font-family: var(--font-headings);
+    font-size: var(--font-size-body);
+    font-weight: 700;
+    color: var(--color-primary);
   }
 
   .note-text {
@@ -183,13 +355,26 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     color: var(--color-text);
   }
 
+  .note-quote {
+    margin-top: var(--space-2);
+    font-family: var(--font-headings);
+    font-size: var(--font-size-small);
+    color: var(--color-secondary);
+  }
+
   @media (max-width: 767px) {
     .page-section {
       padding-top: var(--space-6);
       padding-bottom: var(--space-6);
     }
 
-    .contact-action {
+    .channels-grid,
+    .profiles-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .channel-card,
+    .profile-card {
       padding: var(--space-5);
     }
   }

@@ -3,14 +3,18 @@
 // Componente de Cabeçalho do Projeto Mário Holanda
 // Responsabilidade exclusiva: Landmark semântico <header>
 import Navigation from './Navigation.astro';
+import Logo from './Logo.astro';
 ---
 
 <header class="site-header">
   <div class="container-wide header-container">
     <div class="header-brand">
-      <a href="/" class="brand-link">
-        <span class="brand-name">Mário Holanda</span>
-        <span class="brand-concept">Um Capítulo de Cada Vez</span>
+      <a href="/" class="brand-link" aria-label="Mário Holanda — Página Inicial">
+        <Logo width={54} height={36} class="header-logo" />
+        <div class="brand-text">
+          <span class="brand-name">Mário Holanda</span>
+          <span class="brand-concept">Um Capítulo de Cada Vez</span>
+        </div>
       </a>
     </div>
     <Navigation />
@@ -40,15 +44,34 @@ import Navigation from './Navigation.astro';
 
   .brand-link {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    gap: var(--space-3);
     text-decoration: none;
     color: var(--color-primary);
+    border-radius: var(--space-1);
+    transition: opacity 0.2s ease;
+  }
+
+  .brand-link:hover {
+    opacity: 0.9;
   }
 
   .brand-link:focus-visible {
     outline: 2px solid var(--color-secondary);
     outline-offset: 4px;
-    border-radius: var(--space-1);
+  }
+
+  .header-logo {
+    transition: transform 0.2s ease;
+  }
+
+  .brand-link:hover .header-logo {
+    transform: scale(1.04);
+  }
+
+  .brand-text {
+    display: flex;
+    flex-direction: column;
   }
 
   .brand-name {
@@ -76,7 +99,12 @@ import Navigation from './Navigation.astro';
     }
 
     .brand-link {
-      align-items: center;
+      justify-content: center;
+    }
+
+    .brand-text {
+      align-items: flex-start;
+      text-align: left;
     }
   }
 </style>

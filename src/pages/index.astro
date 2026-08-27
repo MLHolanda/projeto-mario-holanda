@@ -2,6 +2,7 @@
 // src/pages/index.astro
 // Página Inicial — Entrada da Experiência do Projeto Mário Holanda
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Logo from '../components/Logo.astro';
 
 const journeyPaths = [
   {
@@ -44,20 +45,35 @@ const journeyPaths = [
 
 <BaseLayout
   title="Mário Holanda — Um Capítulo de Cada Vez"
-  description="Uma experiência digital viva e narrativa sobre trajetória, aprendizados, projetos e ideias."
+  description="Prazer, eu sou o Mário. Esta é a minha jornada — uma experiência digital viva, autêntica e contínua."
 >
   <section class="hero-entry" aria-labelledby="hero-title">
     <div class="container-reading hero-container">
-      <p class="hero-eyebrow">Trajetória em construção</p>
-      <h1 id="hero-title" class="hero-title">Mário Holanda</h1>
-      <p class="hero-concept">Um Capítulo de Cada Vez</p>
-      <p class="hero-text">
-        Bem-vindo. Este espaço é uma narrativa contínua sobre histórias, aprendizados,
-        projetos e reflexões. Um registro autêntico de uma jornada que evolui a cada passo.
-      </p>
-      <p class="hero-motto">
-        <em>"O livro não precisa estar terminado para começar a ser lido."</em>
-      </p>
+      <div class="hero-brand-mark">
+        <Logo width={96} height={64} class="hero-logo" />
+      </div>
+
+      <header class="hero-header">
+        <p class="hero-eyebrow">Boas-vindas à minha jornada</p>
+        <h1 id="hero-title" class="hero-title">Prazer, eu sou o Mário.</h1>
+        <p class="hero-concept">Esta é a minha história — um capítulo de cada vez.</p>
+      </header>
+
+      <div class="hero-narrative">
+        <p>
+          Este espaço não é um portfólio tradicional de certezas ou conquistas prontas. É o registro
+          vivo e autêntico de uma caminhada — feita de curiosidade, aprendizados, tentativas,
+          projetos e recomeços.
+        </p>
+        <p>
+          Aqui, cada etapa é construída de forma consciente, compartilhada e humana. Trago minhas
+          ideias, experiências, vontades e imperfeições; a inteligência artificial caminha ao meu
+          lado, ajudando a organizar pensamentos, aprender e construir.
+        </p>
+        <p class="hero-motto">
+          <em>"O livro não precisa estar terminado para começar a ser lido."</em>
+        </p>
+      </div>
     </div>
   </section>
 
@@ -96,15 +112,30 @@ const journeyPaths = [
   .hero-entry {
     display: flex;
     align-items: center;
-    min-height: 50vh;
-    padding-top: var(--space-9);
-    padding-bottom: var(--space-9);
+    min-height: 52vh;
+    padding-top: var(--space-8);
+    padding-bottom: var(--space-8);
   }
 
   .hero-container {
     display: flex;
     flex-direction: column;
-    gap: var(--space-4);
+    gap: var(--space-5);
+  }
+
+  .hero-brand-mark {
+    display: flex;
+    align-items: center;
+  }
+
+  .hero-logo {
+    filter: drop-shadow(0 2px 8px rgba(11, 31, 58, 0.06));
+  }
+
+  .hero-header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
   }
 
   .hero-eyebrow,
@@ -134,7 +165,7 @@ const journeyPaths = [
     font-weight: 700;
   }
 
-  .hero-text,
+  .hero-narrative,
   .journey-text,
   .journey-description {
     font-family: var(--font-body);
@@ -143,16 +174,20 @@ const journeyPaths = [
     color: var(--color-text);
   }
 
-  .hero-text {
-    max-width: 60ch;
+  .hero-narrative {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    max-width: 65ch;
   }
 
   .hero-motto {
     margin-top: var(--space-2);
     font-family: var(--font-headings);
     font-size: var(--font-size-small);
-    color: var(--color-text);
-    opacity: 0.85;
+    color: var(--color-secondary);
+    padding-left: var(--space-4);
+    border-left: 2px solid var(--color-accent);
   }
 
   .journey-paths {
@@ -203,18 +238,21 @@ const journeyPaths = [
     padding: var(--space-6);
     color: inherit;
     text-decoration: none;
+    background-color: var(--color-white);
     border: 1px solid rgba(11, 31, 58, 0.1);
     border-radius: var(--space-1);
     transition:
       border-color 0.2s ease,
       background-color 0.2s ease,
-      transform 0.2s ease;
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
   }
 
   .journey-link:hover {
-    background-color: rgba(15, 118, 110, 0.04);
+    background-color: rgba(15, 118, 110, 0.03);
     border-color: var(--color-secondary);
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(11, 31, 58, 0.05);
   }
 
   .journey-link:focus-visible {
@@ -247,6 +285,10 @@ const journeyPaths = [
 
     .hero-entry {
       min-height: auto;
+    }
+
+    .hero-container {
+      gap: var(--space-4);
     }
 
     .journey-list {

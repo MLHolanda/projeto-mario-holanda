@@ -1,0 +1,46 @@
+---
+// src/components/Logo.astro
+// Componente modular do Símbolo / Logo de Mário Holanda
+// Identidade: Monograma MH integrado ao tronco de árvore, raízes, folhas e seta ascendente
+
+interface Props {
+  size?: number | string;
+  width?: number | string;
+  height?: number | string;
+  class?: string;
+  ariaHidden?: boolean;
+  altText?: string;
+  loading?: 'lazy' | 'eager';
+}
+
+const {
+  size,
+  width = size || 60,
+  height = size ? (typeof size === 'number' ? Math.round(size / 1.5) : size) : 40,
+  class: className = '',
+  ariaHidden = true,
+  altText = 'Identidade Visual Mário Holanda',
+  loading = 'eager',
+} = Astro.props;
+---
+
+<img
+  src="/images/mario-holanda-identidade.png"
+  alt={ariaHidden ? '' : altText}
+  aria-hidden={ariaHidden ? 'true' : undefined}
+  width={width}
+  height={height}
+  loading={loading}
+  decoding="async"
+  class:list={['brand-symbol', className]}
+/>
+
+<style>
+  .brand-symbol {
+    display: block;
+    height: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+</style>
+

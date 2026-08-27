@@ -2,6 +2,98 @@
 // src/pages/projetos.astro
 // Página de Projetos — Projeto Mário Holanda
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+interface Project {
+  title: string;
+  tech: string;
+  description: string;
+  liveUrl?: string;
+  githubUrl: string;
+  isCodeOnly?: boolean;
+}
+
+const projects: Project[] = [
+  {
+    title: 'Sorteio Só Vitória',
+    tech: 'React · Vite · CSS',
+    description:
+      'Aplicação para organização e sorteio de times de futebol amador, incluindo cronômetro integrado de partidas, placar em tempo real e gerenciamento de jogadores.',
+    liveUrl: 'https://sorteio-so-vitoria.vercel.app',
+    githubUrl: 'https://github.com/MLHolanda/sorteio-so-vitoria',
+  },
+  {
+    title: 'Tabela Copa 2026',
+    tech: 'HTML5 · CSS3 · JavaScript',
+    description:
+      'Simulador interativo da Copa do Mundo de 2026 com atualização automática de classificação, saldo de gols e acompanhamento de estatísticas.',
+    liveUrl: 'https://tabela-copa-2026.vercel.app',
+    githubUrl: 'https://github.com/MLHolanda/tabela-copa-2026',
+  },
+  {
+    title: 'Tetris Mario',
+    tech: 'HTML5 · CSS3 · JavaScript',
+    description:
+      'Jogo clássico de Tetris temático inspirado no universo Mario, construído como exercício de lógica de jogos com sistema de pontos e controles adaptados.',
+    liveUrl: 'https://tetris-mario.vercel.app',
+    githubUrl: 'https://github.com/MLHolanda/tetris-mario',
+  },
+  {
+    title: 'Mário Holanda Links',
+    tech: 'HTML5 · CSS3 · JavaScript',
+    description:
+      'Hub personalizado estilo "Link in Bio" reunindo ofertas verificadas, cupons de desconto em destaque e canais de contato.',
+    liveUrl: 'https://marioholanda-links.vercel.app',
+    githubUrl: 'https://github.com/MLHolanda/marioholanda-links',
+  },
+  {
+    title: 'Projeto Márcio',
+    tech: 'HTML5 · CSS3 · Lucide Icons',
+    description:
+      'Página de agregação de links com interface em tema escuro minimalista, tipografia customizada e ícones vetoriais.',
+    liveUrl: 'https://projeto-marcio-phi.vercel.app',
+    githubUrl: 'https://github.com/MLHolanda/projeto-marcio',
+  },
+  {
+    title: 'Meu Catálogo de Afiliados',
+    tech: 'HTML5 · CSS3 · JavaScript',
+    description:
+      'Página de catálogo com vitrine de produtos e oportunidades recomendadas, com formulário de captura integrado.',
+    liveUrl: 'https://mlholanda.github.io/meu-catalogo-afiliados/',
+    githubUrl: 'https://github.com/MLHolanda/meu-catalogo-afiliados',
+  },
+  {
+    title: 'NLW Spacetime',
+    tech: 'HTML5 · CSS3',
+    description:
+      'Cápsula do tempo digital desenvolvida durante evento da Rocketseat para registrar memórias e marcos da caminhada.',
+    liveUrl: 'https://mlholanda.github.io/nlw-spacetime/',
+    githubUrl: 'https://github.com/MLHolanda/nlw-spacetime',
+  },
+  {
+    title: 'Meu Portfólio (v1)',
+    tech: 'HTML5 · CSS3 · FontAwesome',
+    description:
+      'Primeira versão exploratória de portfólio pessoal, servindo como marco inicial nos estudos de estruturação web.',
+    liveUrl: 'https://meu-portifolio-smoky-eight.vercel.app',
+    githubUrl: 'https://github.com/MLHolanda/meu-portifolio',
+  },
+  {
+    title: 'Estudos Python (Guanabara)',
+    tech: 'Python',
+    description:
+      'Repositório com exercícios e desafios práticos de lógica de programação desenvolvidos ao longo do curso do Curso em Vídeo.',
+    githubUrl: 'https://github.com/MLHolanda/estudos-python-guanabara',
+    isCodeOnly: true,
+  },
+  {
+    title: 'Projeto Mário Holanda',
+    tech: 'Astro · HTML5 · CSS3',
+    description:
+      'Código-fonte aberto deste próprio portal ("Um Capítulo de Cada Vez"), estruturado com foco em acessibilidade, performance e atmosfera editorial.',
+    githubUrl: 'https://github.com/MLHolanda/projeto-mario-holanda',
+    isCodeOnly: true,
+  },
+];
 ---
 
 <BaseLayout
@@ -28,53 +120,100 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           Às vezes, começa apenas com uma vontade de aprender, entender como algo
           funciona e tentar transformar uma ideia em algo real.
         </p>
+
+        <p>
+          Este próprio site nasceu dessa busca: um projeto vivo, construído enquanto
+          continuo aprendendo, estudando e descobrindo novos caminhos em parceria
+          com a inteligência artificial.
+        </p>
       </div>
 
-      <article class="project-highlight">
-        <p class="project-label">Em construção</p>
+      <!-- PROJETO PRINCIPAL EM DESTAQUE -->
+      <article class="featured-project" aria-labelledby="featured-project-title">
+        <div class="badge-container">
+          <span class="project-badge">Projeto Ativo</span>
+        </div>
 
-        <h2 class="highlight-title">Projeto Mário Holanda</h2>
+        <h2 id="featured-project-title" class="featured-title">
+          Mário Holanda Ofertas
+        </h2>
 
-        <div class="highlight-description">
+        <div class="featured-description">
           <p>
-            Este próprio site nasceu assim.
+            Um projeto voltado para reunir ofertas, oportunidades e cupons,
+            buscando unir tecnologia, automação e uma experiência simples para
+            quem procura boas oportunidades no dia a dia.
           </p>
+        </div>
 
-          <p>
-            Ele não foi criado para apresentar uma versão pronta ou perfeita de mim.
-            Pelo contrário. Ele está sendo construído enquanto eu continuo aprendendo,
-            estudando, cometendo erros, corrigindo caminhos e descobrindo novas
-            possibilidades.
-          </p>
-
-          <p>
-            Aqui, cada decisão faz parte de uma construção compartilhada. Eu trago
-            minhas ideias, experiências, dúvidas e vontades. A inteligência artificial
-            caminha ao meu lado, ajudando a organizar, questionar, transformar e construir.
-          </p>
-
-          <p>O resultado não é algo pronto.</p>
-
-          <p><strong>É um projeto vivo.</strong></p>
-
-          <p>
-            Este espaço continuará mudando, recebendo novos conteúdos, novas ideias e,
-            naturalmente, outros projetos que também fazem parte dessa caminhada.
-          </p>
-
-          <p>
-            Porque alguns projetos não aparecem quando estão terminados.
-          </p>
-
-          <p><strong>Eles aparecem enquanto estão sendo construídos.</strong></p>
+        <div class="featured-action">
+          <a
+            href="https://ofertas.mlholanda.com.br"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="action-button"
+            aria-label="Acessar Mário Holanda Ofertas (abre em nova aba)"
+          >
+            Acessar Mário Holanda Ofertas ↗
+          </a>
         </div>
       </article>
 
+      <!-- OUTROS PROJETOS DA JORNADA -->
+      <section class="secondary-projects" aria-labelledby="secondary-projects-title">
+        <header class="secondary-header">
+          <p class="secondary-eyebrow">Jornada de Aprendizado</p>
+          <h2 id="secondary-projects-title" class="secondary-title">
+            Outros projetos da caminhada
+          </h2>
+          <p class="secondary-concept">
+            Construções que fazem parte do processo contínuo de estudo, lógica e experimentação.
+          </p>
+        </header>
+
+        <div class="projects-grid">
+          {projects.map((project) => (
+            <article class="project-card">
+              <div class="card-top">
+                <div class="card-heading-group">
+                  <h3 class="card-title">{project.title}</h3>
+                  <span class="card-tech">{project.tech}</span>
+                </div>
+                <p class="card-description">{project.description}</p>
+              </div>
+
+              <div class="card-actions">
+                {project.liveUrl && (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="card-link primary"
+                    aria-label={`Acessar projeto ${project.title} (abre em nova aba)`}
+                  >
+                    Acessar projeto ↗
+                  </a>
+                )}
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="card-link secondary"
+                  aria-label={`Ver código-fonte de ${project.title} no GitHub (abre em nova aba)`}
+                >
+                  {project.isCodeOnly ? 'Ver no GitHub ↗' : 'GitHub ↗'}
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <!-- NOTA DE CONTINUIDADE -->
       <div class="construction-note">
         <p class="note-title">A caminhada continua</p>
         <p class="note-text">
-          Outros projetos também fazem parte desta trajetória. Aos poucos, eles
-          encontrarão seu espaço por aqui.
+          Novos projetos e aprendizados continuam sendo construídos a cada dia. Aos poucos, cada passo dessa trajetória encontra seu espaço por aqui.
         </p>
       </div>
 
@@ -92,7 +231,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   .content-container {
     display: flex;
     flex-direction: column;
-    gap: var(--space-6);
+    gap: var(--space-7);
   }
 
   .section-header {
@@ -102,7 +241,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   }
 
   .page-eyebrow,
-  .project-label {
+  .secondary-eyebrow {
     font-family: var(--font-body);
     font-size: var(--font-size-small);
     font-weight: 600;
@@ -140,17 +279,37 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     max-width: 65ch;
   }
 
-  .project-highlight {
+  /* PROJETO PRINCIPAL EM DESTAQUE */
+  .featured-project {
     display: flex;
     flex-direction: column;
     gap: var(--space-4);
     padding: var(--space-6);
     background-color: var(--color-white);
-    border: 1px solid rgba(11, 31, 58, 0.1);
+    border: 1px solid rgba(11, 31, 58, 0.12);
+    border-left: 4px solid var(--color-secondary);
     border-radius: var(--space-1);
+    box-shadow: 0 2px 8px rgba(11, 31, 58, 0.04);
   }
 
-  .highlight-title {
+  .badge-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .project-badge {
+    font-family: var(--font-body);
+    font-size: var(--font-size-caption);
+    font-weight: 600;
+    color: var(--color-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    background-color: rgba(15, 118, 110, 0.08);
+    padding: var(--space-1) var(--space-3);
+    border-radius: 999px;
+  }
+
+  .featured-title {
     font-family: var(--font-headings);
     font-size: var(--font-size-h2);
     line-height: var(--line-height-h2);
@@ -158,13 +317,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     font-weight: 700;
   }
 
-  .highlight-description {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-4);
-  }
-
-  .highlight-description p {
+  .featured-description p {
     font-family: var(--font-body);
     font-size: var(--font-size-body);
     line-height: var(--line-height-body);
@@ -172,6 +325,179 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     max-width: 65ch;
   }
 
+  .featured-action {
+    margin-top: var(--space-2);
+  }
+
+  .action-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-5);
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-family: var(--font-body);
+    font-size: var(--font-size-small);
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: var(--space-1);
+    transition:
+      background-color 0.2s ease,
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .action-button:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(11, 31, 58, 0.12);
+  }
+
+  .action-button:focus-visible {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 3px;
+  }
+
+  /* SEÇÃO DE OUTROS PROJETOS */
+  .secondary-projects {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+    padding-top: var(--space-4);
+    border-top: 1px solid rgba(11, 31, 58, 0.08);
+  }
+
+  .secondary-header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .secondary-title {
+    font-family: var(--font-headings);
+    font-size: var(--font-size-h3);
+    line-height: var(--line-height-h3);
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+
+  .secondary-concept {
+    font-family: var(--font-body);
+    font-size: var(--font-size-small);
+    line-height: var(--line-height-small);
+    color: var(--color-text);
+    opacity: 0.9;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-4);
+  }
+
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: var(--space-4);
+    padding: var(--space-5);
+    background-color: var(--color-white);
+    border: 1px solid rgba(11, 31, 58, 0.08);
+    border-radius: var(--space-1);
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .project-card:hover {
+    border-color: rgba(15, 118, 110, 0.25);
+    box-shadow: 0 4px 12px rgba(11, 31, 58, 0.04);
+    transform: translateY(-2px);
+  }
+
+  .card-top {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .card-heading-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  .card-title {
+    font-family: var(--font-headings);
+    font-size: var(--font-size-body);
+    line-height: 1.35;
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+
+  .card-tech {
+    font-family: var(--font-body);
+    font-size: var(--font-size-caption);
+    line-height: var(--line-height-caption);
+    color: var(--color-secondary);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+
+  .card-description {
+    font-family: var(--font-body);
+    font-size: var(--font-size-small);
+    line-height: var(--line-height-small);
+    color: var(--color-text);
+    opacity: 0.9;
+  }
+
+  .card-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    padding-top: var(--space-3);
+    border-top: 1px solid rgba(11, 31, 58, 0.05);
+    margin-top: auto;
+  }
+
+  .card-link {
+    font-family: var(--font-body);
+    font-size: var(--font-size-small);
+    line-height: var(--line-height-small);
+    text-decoration: none;
+    transition: color 0.2s ease, opacity 0.2s ease;
+  }
+
+  .card-link.primary {
+    color: var(--color-secondary);
+    font-weight: 600;
+  }
+
+  .card-link.secondary {
+    color: var(--color-text);
+    opacity: 0.7;
+    font-weight: 500;
+  }
+
+  .card-link:hover {
+    color: var(--color-primary);
+    opacity: 1;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .card-link:focus-visible {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* NOTA DE FECHAMENTO */
   .construction-note {
     padding: var(--space-5);
     background-color: var(--color-white);
@@ -202,8 +528,25 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       padding-bottom: var(--space-6);
     }
 
-    .project-highlight {
+    .content-container {
+      gap: var(--space-6);
+    }
+
+    .featured-project {
       padding: var(--space-5);
+    }
+
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .project-card {
+      padding: var(--space-4);
+    }
+
+    .action-button {
+      width: 100%;
     }
   }
 </style>
+
